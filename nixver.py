@@ -10,7 +10,7 @@ class Info():
         try:
             distro_release = re.search("BUILD_ID=(.*?)\n", dump).group(1)
         except:
-            distro_release = re.search("VERSION=(.*?)\n", dump).group(1)
+            distro_release = re.search("VERSION=\"(.*?)\"\n", dump).group(1)
         distro = distro_name + "\n              Version: " + distro_release
         return distro
     
