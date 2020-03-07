@@ -6,8 +6,11 @@ class Info():
     def get_distro():
         with open('/usr/lib/os-release') as tmp:
             dump = tmp.read()
-        distro_name = re.search("NAME=\"(.*?)\"", dump).group(1)
-        distro_release = re.search("BUILD_ID=(.*?)\n", dump).group(1)
+        distro_name = re.search("PRETTY_NAME=\"(.*?)\"", dump).group(1)
+        try:
+            distro_release = re.search("BUILD_ID=(.*?)\n", dump).group(1)
+        except:
+            distro_release = re.search("VERSION=(.*?)\n", dump).group(1)
         distro = distro_name + "\n              Version: " + distro_release
         return distro
     
