@@ -12,7 +12,7 @@ class Info():
         return distro
     
     def get_logo():
-        logo_pixbuf = GdkPixbuf.Pixbuf.new_from_file("arch.png")
+        logo_pixbuf = GdkPixbuf.Pixbuf.new_from_file("logo.png")
         logo_pixbuf = logo_pixbuf.scale_simple(logo_pixbuf.get_width() * 0.5, logo_pixbuf.get_height() * 0.5, GdkPixbuf.InterpType.BILINEAR)
         logo = Gtk.Image.new_from_pixbuf(logo_pixbuf)
         return logo
