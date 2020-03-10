@@ -33,13 +33,24 @@ class MainWindow(Gtk.Window):
         label_distro.set_halign(1)
         label_kernel = Gtk.Label("              Kernel version: " + platform.uname()[2] + "\n              Kernel type: " + platform.uname()[0])
         label_kernel.set_halign(1)
+        close_button = Gtk.Button(" OK ")
 
         box = Gtk.VBox(False)
+        bottom_box = Gtk.HBox(False)
+
+        bottom_box.pack_end(close_button, False, False, 15)
+
         box.pack_start(distro_logo, False, False, 20)
         box.pack_start(label_distro, False, False, 1)
         box.pack_start(label_kernel, False, False, 1)
+        box.pack_end(bottom_box, False, False, 15)
+
+        close_button.connect("clicked", self.close_button_clicked)
 
         self.add(box)
+
+    def close_button_clicked(self, close_button):
+        Gtk.main_quit()
 
 window = MainWindow()
 window.connect("destroy", Gtk.main_quit)
