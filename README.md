@@ -9,4 +9,5 @@ Nixver is Window's winver like program that shows basic system information. It s
 * Finally enter to directory `cd nixver` and run program `python3 nixver.py`
 
 # To do
-Display appropriate distribution logo.
+* Display appropriate distribution logo.
+* Add more system info.
