@@ -9,4 +9,4 @@ Nixver is Window's winver like program that shows basic system information. It s
 * Finally enter to directory `cd nixver` and run program `python3 nixver.py`
 
 # To do
-Can someone help me with setting proper logo? I want to grab logo file from somewhere in the filesystem, beacuse I don't want to store a lot of `.png` files in repo.
+Display appropriate distribution logo.
